@@ -21,6 +21,7 @@ int getword(char *word)
         *(word + i) = ch;
         i++;
         ch = getchar();
+        if((int)ch< 32) ch = getchar();
     }
     *(word + i) = '\0';
     return i;
