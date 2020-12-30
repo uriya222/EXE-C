@@ -128,6 +128,10 @@ int main()
                     break;
             }
             word = (char *)malloc((size_t)p_length + 1);
+            if(word==NULL){
+                perror("not enough space");
+                exit(-1);
+            }
             for (size_t i = 0; i < p_length; i++)
                 *(word + i) = *(line + i);
             *(word + p_length) = '\0';
